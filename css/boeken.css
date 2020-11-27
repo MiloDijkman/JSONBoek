@@ -1,0 +1,113 @@
+body{
+  font-family: 'Open Sans', sans-serif;
+}
+.ww{
+  position: absolute;
+  right: 2em;
+  cursor: pointer;
+}
+.ww__icon{
+  height: 3em;
+}
+#boeken{
+  clear: both;
+}
+.ww__aantal{
+  font-size: .6em;
+  background-color: #333;
+  top: -.3em;
+  left: 3.9em;
+  color: white;
+  position: absolute;
+  width: 1em;
+  line-height: 1em;
+  padding: .5em;
+  text-align: center;
+  border-radius: 2em;
+}
+.boek{
+  padding: 1em;
+  clear: left;
+}
+.boek__cover{
+  float: left;
+  max-width: 150px;
+}
+.boek__info{
+  margin-left: 180px;
+}
+.boek__kopje{
+  margin-top: 0;
+  color: #66FFB2;
+  font-size: 1.5em;
+}
+.boek__paginas::after, .boek__uitgave::after, .boek__ean::after{
+  content: " | ";
+}
+.boek__prijs{
+  font-size: 2em;
+  color: #66FFB2;
+}
+.boek__bestel-knop{
+  font-size: .5em;
+  float: right;
+  display: block;
+  text-decoration: none;
+  color: #66FFB2;
+  background-color: white;
+  padding: .4em 2.5em;
+  border: 2px solid #66FFB2;
+  margin-top: 1em;
+  margin-right: 1em;
+  border-radius: 1em;
+  font-weight: 700;
+  font-variant: small-caps;
+  letter-spacing: .2em;
+  transition: 0.3s;
+}
+.boek__bestel-knop:hover{
+  color: white;
+  transition: 0.3s;
+  background-color: #66FFB2;
+}
+.bestelformulier__verlaag, .bestelformulier__verhoog{
+  padding: 1em;
+}
+.besturing__sorteren{
+  float: right;
+  text-align: right;
+}
+@media (min-width:1250px) {
+  #boeken{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .boek:nth-child(4n+2), .boek:nth-child(4n+3) {
+    background-color: #555;
+  }
+}
+.bestelformulier{
+  background-color: white;
+  position: absolute;
+  width: 90vw;
+  min-height: 90vh;
+  top: 0em;
+  border-radius: 2em;
+  border: solid #333 2px;
+  padding: 2em;
+  box-sizing: border-box;
+  margin: 4vh 4vw;
+  transform: translateX(100vw);
+  transition: transform 1s ease-out;
+}
+#haalFormulier{
+  display: none;
+}
+#haalFormulier:checked ~ .bestelformulier{
+  transform: translateX(0vw);
+
+}
+.bestelformulier__cover{
+  width: 6em;
+}
